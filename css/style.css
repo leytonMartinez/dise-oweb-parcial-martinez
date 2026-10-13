@@ -1,0 +1,153 @@
+/* ===== 1. Reset y variables ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --azul: #1f4e79;
+  --azul-claro: #2980b9;
+  --fondo-claro: #eef4fa;
+  --texto: #222;
+  --blanco: #fff;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; }
+
+/* ===== 2. Utilidades de flotantes ===== */
+.clearfix::after { content: ""; display: table; clear: both; }  /* contiene los float */
+.limpiar { clear: both; }                                         /* limpia el flujo */
+
+/* ===== 3. Selector de id (mayor especificidad) ===== */
+#cabecera {
+  background: var(--azul);
+  padding: 12px 5%;
+}
+#cabecera .logo { color: var(--blanco); font-size: 1.5rem; float: left; }
+#cabecera .logo span { color: #7fc4ff; }
+
+#menu { float: right; }
+#menu ul { list-style: none; }
+#menu li { float: left; }
+
+/* Selector de clase + transición */
+.enlace {
+  display: block;
+  color: var(--blanco);
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: background-color .3s ease, transform .3s ease;
+}
+.enlace:hover, .enlace.activo { background: var(--azul-claro); transform: translateY(-2px); }
+
+/* ===== 4. Secciones ===== */
+.seccion { padding: 50px 5%; animation: aparecer .8s ease both; }
+.seccion h2 { color: var(--azul); margin-bottom: 20px; }
+.seccion-clara { background: var(--fondo-claro); }
+
+.hero {
+  background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+  color: var(--blanco);
+  text-align: center;
+  padding: 80px 5%;
+}
+.hero h2 { color: var(--blanco); font-size: 2rem; }
+.hero p { margin-bottom: 25px; }
+
+/* ===== 5. Botón con animaciones ===== */
+.boton {
+  display: inline-block;
+  background: var(--blanco);
+  color: var(--azul);
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform .3s ease, box-shadow .3s ease;
+  animation: pulso 2s infinite;
+}
+.boton:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(0,0,0,.3); animation: none; }
+
+/* ===== 6. Cajas flotantes (div + float) ===== */
+.caja {
+  float: left;
+  width: 31.33%;
+  margin-right: 3%;
+  background: var(--blanco);
+  border: 1px solid #d5e1ee;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.caja-final { margin-right: 0; }
+.caja:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,.15); }
+.caja img { width: 90px; margin: 0 auto 12px; transition: transform .4s ease; }
+.caja:hover img { transform: rotate(8deg) scale(1.1); }
+.caja h3 { color: var(--azul); margin-bottom: 8px; }
+
+.perfil-img  { float: left; width: 30%; }
+.perfil-img img { width: 100%; max-width: 220px; border-radius: 50%; transition: transform .4s ease; }
+.perfil-img img:hover { transform: scale(1.05); }
+.perfil-texto { float: right; width: 65%; }
+.perfil-texto p { margin-bottom: 12px; }
+
+/* ===== 7. Multimedia ===== */
+#multimedia h3 { margin: 18px 0 10px; color: var(--azul); }
+#multimedia audio { width: 100%; max-width: 500px; }
+
+.video-responsivo {                 /* proporción 16:9 */
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-responsivo iframe {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: 0;
+}
+
+.enlace-texto { color: var(--azul-claro); font-weight: bold; transition: color .3s; }
+.enlace-texto:hover { color: var(--azul); text-decoration: underline; }
+
+/* ===== 8. Pie de página ===== */
+#pie { background: var(--azul); color: var(--blanco); text-align: center; padding: 18px 5%; }
+
+/* ===== 9. Animaciones @keyframes ===== */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(255,255,255,.7); }
+  70%  { box-shadow: 0 0 0 14px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+/* ===== 10. Diseño responsivo (media queries) ===== */
+
+/* Móvil: menos de 768px -> se anulan los float y todo se apila */
+@media (max-width: 767px) {
+  #cabecera .logo, #menu, #menu li { float: none; }
+  #cabecera { text-align: center; }
+  #menu li { display: inline-block; }
+  .caja, .perfil-img, .perfil-texto { float: none; width: 100%; margin: 0 0 20px; }
+  .perfil-img { max-width: 180px; margin: 0 auto 20px; }
+  .hero h2 { font-size: 1.5rem; }
+}
+
+/* Escritorio: 768px o más -> cajas en columnas flotantes */
+@media (min-width: 768px) {
+  .seccion { padding: 60px 10%; }
+  .hero { padding: 100px 10%; }
+  .hero h2 { font-size: 2.6rem; }
+}
+
+/* Accesibilidad: respeta usuarios que reducen el movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Web</title>
+  <meta name="description" content="Portafolio de diseño web: servicios de maquetación HTML5 y CSS3, diseño responsivo y optimización SEO. Proyecto del curso Diseño Web - UCH.">
+  <meta name="keywords" content="portafolio, diseño web, HTML5, CSS3, front-end, diseño responsivo, SEO, GitHub Pages, UCH">
+  <meta name="author" content="Tu Nombre y Apellido">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="cabecera" class="clearfix">
+    <h1 class="logo">Mi<span>Portafolio</span></h1>
+    <nav id="menu" aria-label="Menú principal">
+      <ul>
+        <li><a class="enlace activo" href="index.html#inicio">Inicio</a></li>
+        <li><a class="enlace" href="index.html#servicios">Servicios</a></li>
+        <li><a class="enlace" href="index.html#sobre-mi">Sobre mí</a></li>
+        <li><a class="enlace" href="index.html#multimedia">Multimedia</a></li>
+        <li><a class="enlace" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="inicio" class="seccion hero">
+      <h2>Diseño web moderno, rápido y responsivo</h2>
+      <p>Creo sitios con HTML5 semántico, CSS3 y animaciones que se adaptan a cualquier pantalla.</p>
+      <a class="boton" href="index.html#contacto">Contáctame</a>
+    </section>
+
+    <section id="servicios" class="seccion">
+      <h2>Servicios</h2>
+      <div class="contenedor clearfix">
+        <div class="caja">
+          <img src="img/servicio-web.svg" alt="Icono de maquetación web con etiquetas de código">
+          <h3>Maquetación Web</h3>
+          <p>Estructura semántica con HTML5 y estilos organizados en hojas externas con CSS3.</p>
+        </div>
+        <div class="caja">
+          <img src="img/servicio-responsivo.svg" alt="Icono de diseño responsivo en móvil y escritorio">
+          <h3>Diseño Responsivo</h3>
+          <p>Adaptación a móviles, tablets y escritorio mediante media queries.</p>
+        </div>
+        <div class="caja caja-final">
+          <img src="img/servicio-seo.svg" alt="Icono de lupa que representa la optimización SEO">
+          <h3>Optimización SEO</h3>
+          <p>Metaetiquetas, textos alternativos y estructura clara para buscadores.</p>
+        </div>
+      </div>
+      <div class="limpiar"></div>
+    </section>
+
+    <section id="sobre-mi" class="seccion seccion-clara">
+      <h2>Sobre mí</h2>
+      <div class="clearfix">
+        <div class="perfil-img">
+          <img src="img/perfil.svg" alt="Avatar del autor del portafolio">
+        </div>
+        <div class="perfil-texto">
+          <p>Soy estudiante de Ingeniería de Sistemas e Informática en la UCH. Me gusta crear
+          interfaces claras, accesibles y con interacciones visuales cuidadas.</p>
+          <p>Tecnologías: <strong>HTML5, CSS3, Git y GitHub Pages</strong>.</p>
+          <p>sitios usados: <strong>Git y GitHub Pages</strong>.</p>
+        </div>
+      </div>
+      <div class="limpiar"></div>
+    </section>
+
+    <section id="multimedia" class="seccion">
+      <h2>Recursos multimedia</h2>
+
+      <h3>Audio de presentación (archivo local)</h3>
+      <audio controls preload="none">
+        <source src="media/audio-demo.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+
+      <h3>Video externo (YouTube)</h3>
+      <div class="video-responsivo">
+        <video controls width="560" height="315"> <source src="media/mi-videoDemo.mp4" type="mi-videoDemo.mp4" title="Video local extraido de YouTube" ></video>     
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion seccion-clara">
+      <h2>Contacto</h2>
+      <p>Escríbeme a <a class="enlace-texto" href="https://mail.google.com/mail/u/0/?hl=es#inbox">leonelceleste9@gmail.com</a></p>
+      <p>Escríbeme a <a class="enlace-texto" href="https://github.com/">https://github.com/</a></p>
+    </section>
+  </main>
+  <footer id="pie">
+    <p>&copy; 2026 Tu Nombre y Apellido &middot; Diseño Web &middot; UCH</p>
+  </footer>
+
+</body>
+</html>
